@@ -8,7 +8,7 @@
     --success-color: #10b981;
     --warning-color: #f59e0b;
     --danger-color: #ef4444;
-    --dark-yellow:#ffdd57;
+    --dark-yellow:#ff3c01;
 }
 
 * {
@@ -87,7 +87,7 @@ nav ul li a::after {
     position: absolute;
     width: 0;
     height: 2px;
-    background-color: var(--primary-color);
+    background-color: var(--dark-yellow);
     bottom: -5px;
     left: 0;
     transition: width 0.3s ease;
@@ -96,6 +96,43 @@ nav ul li a::after {
 nav ul li a:hover::after,
 nav ul li a.active::after {
     width: 100%;
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding-right: 1rem;
+}
+
+@media (max-width: 1330px) {
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 0;
+        padding: 0.8rem 2rem;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .mobile-menu {
+        color: rgb(0, 0, 0);
+        display: block;
+        padding-left: 2rem;
+    }
 }
 
 /*footer section styles*/
